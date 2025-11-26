@@ -14,4 +14,9 @@ export class AppController {
   getHelloCats(): string {
     return this.appService.getHelloCats();
   }
+
+  @Get('cats')
+  getCatsGreeting(): string {
+    return this.appService.getHelloCats();
+  }
 }
