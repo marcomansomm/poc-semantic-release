@@ -19,4 +19,9 @@ export class AppController {
   getCatsGreeting(): string {
     return this.appService.getHelloCats() + ' from controller!';
   }
+
+  @Get('hello')
+  getHelloGreeting(): string {
+    return this.appService.getHello() + ' from controller!';
+  }
 }
