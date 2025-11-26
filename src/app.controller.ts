@@ -12,7 +12,7 @@ export class AppController {
 
   @Get()
   getHelloCats(): string {
-    return this.appService.getHelloCats();
+    return this.appService.getHelloCats() + ' from controller!';
   }
 
   @Get('cats')
