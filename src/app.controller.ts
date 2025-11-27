@@ -24,4 +24,9 @@ export class AppController {
   getHelloGreeting(): string {
     return this.appService.getHello() + ' from controller!';
   }
+
+  @Get('greet')
+  getGreet(): string {
+    return 'Greetings from controller!';
+  }
 }
