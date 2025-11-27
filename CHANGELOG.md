@@ -1,3 +1,10 @@
+# [1.5.0-rc.2](https://github.com/marcomansomm/poc-semantic-release/compare/v1.5.0-rc.1...v1.5.0-rc.2) (2025-11-27)
+
+
+### Features
+
+* adiciona nova rota de greet 3 ([6227f60](https://github.com/marcomansomm/poc-semantic-release/commit/6227f60b3b1c19b47d760734c4d75c6d08a6920b))
+
 # [1.5.0-rc.1](https://github.com/marcomansomm/poc-semantic-release/compare/v1.4.0...v1.5.0-rc.1) (2025-11-27)
 
 
