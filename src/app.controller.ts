@@ -34,4 +34,9 @@ export class AppController {
   getGreet2(): string {
     return 'Greetings from controller! 2';
   }
+
+  @Get('greet3')
+  getGreet3(): string {
+    return 'Greetings from controller! 3';
+  }
 }
