@@ -1,14 +1,37 @@
 {
     "branches": [
-        "master",
-        "next"
+        {
+            "name": "main"
+        },
+        {
+            "name": "milestone/*",
+            "prerelease": "rc"
+        }
     ],
+    "tagFormat": "${version}",
     "plugins": [
-        "@semantic-release/exec",
+        "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
-        "@semantic-release/changelog",
-        "@semantic-release/git",
-        "@semantic-release/github",
-        "conventional-changelog-conventionalcommits"
+        [
+            "@semantic-release/changelog",
+            {
+                "changelogFile": "CHANGELOG.md"
+            }
+        ],
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "CHANGELOG.md",
+                    "package.json"
+                ]
+            }
+        ],
+        [
+            "@semantic-release/gitlab",
+            {
+                "gitlabUrl": "https://gitlab.com"
+            }
+        ]
     ]
 }

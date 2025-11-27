@@ -18,8 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "release:dry": "npx --package semantic-release --package @semantic-release/exec --package conventional-changelog-conventionalcommits --no-ci --dry-run",
-    "release": "npx --package semantic-release --package @semantic-release/exec --package conventional-changelog-conventionalcommits --no-ci"
+    "release:dry": "npx semantic-release --no-ci --dry-run",
+    "release": "npx semantic-release --no-ci"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
