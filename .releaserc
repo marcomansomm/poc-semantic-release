@@ -2,10 +2,6 @@
     "branches": [
         "master",
         {
-            "name": "beta",
-            "prerelease": true
-        },
-        {
             "name": "milestone/*",
             "prerelease": "beta"
         }
