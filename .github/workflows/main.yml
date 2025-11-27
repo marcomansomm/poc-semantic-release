@@ -9,10 +9,35 @@ jobs:
   release:
     name: Run semantic-release
     runs-on: ubuntu-latest
+    env:
+      # passa o secret GH_TOKEN para a variável de ambiente GH_TOKEN
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
-      - name: Validate Secrets
-        run: echo GH_TOKEN=${{ secrets.GH_TOKEN }}
+      - name: Check GH_TOKEN is present and valid
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "❌ GH_TOKEN não está definido. Verifique o secret 'GH_TOKEN' em Settings > Secrets > Actions."
+            exit 1
+          fi
+
+          echo "✅ GH_TOKEN está definido. Checando permissão na API do GitHub..."
+
+          # testa se o token consegue autenticar na API do GitHub
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/user)
+
+          if [ "$STATUS_CODE" -ne 200 ]; then
+            echo "❌ GH_TOKEN não conseguiu autenticar na API do GitHub (status $STATUS_CODE)."
+            echo "   Verifique se o token é válido e se tem permissão para acessar repositórios."
+            exit 1
+          fi
+
+          echo "✅ GH_TOKEN válido e autenticando na API do GitHub."
+          # opcional: mostrar apenas o tamanho do token (não mostra valor)
+          echo "ℹ️  Tamanho do token: ${#GH_TOKEN} caracteres"
 
       - name: Checkout
         uses: actions/checkout@v4
