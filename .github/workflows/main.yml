@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Validate Secrets
+        run: echo GH_TOKEN=${{ secrets.GH_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
