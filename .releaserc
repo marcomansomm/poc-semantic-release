@@ -1,11 +1,10 @@
 {
     "branches": [
         {
-            "name": "main",
+            "name": "master",
             "prerelease": true
         }
     ],
-    "tagFormat": "${version}",
     "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
