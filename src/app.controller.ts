@@ -29,4 +29,9 @@ export class AppController {
   getGreet(): string {
     return 'Greetings from controller!';
   }
+
+  @Get('greet2')
+  getGreet2(): string {
+    return 'Greetings from controller! 2';
+  }
 }
