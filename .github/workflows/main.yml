@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - 'milestone/*'
 
 permissions:
   contents: write
