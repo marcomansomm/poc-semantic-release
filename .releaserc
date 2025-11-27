@@ -3,7 +3,7 @@
         "master",
         {
             "name": "milestone/*",
-            "prerelease": "beta"
+            "prerelease": "rc"
         }
     ],
     "plugins": [
