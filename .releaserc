@@ -1,6 +1,10 @@
 {
     "branches": [
-        "master"
+        "master",
+        {
+            "name": "milestone/*",
+            "prerelease": "rc"
+        }
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",
