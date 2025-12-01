@@ -25,9 +25,9 @@ export class AppController {
     return this.appService.getHello() + ' from controller!';
   }
 
-  @Get('greet')
+  @Get('greet1')
   getGreet(): string {
-    return 'Greetings from controller!';
+    return 'Greetings from controller! 1';
   }
 
   @Get('greet2')
@@ -38,5 +38,10 @@ export class AppController {
   @Get('greet3')
   getGreet3(): string {
     return 'Greetings from controller! 3';
+  }
+
+  @Get('greet4')
+  getGreet4(): string {
+    return 'Greetings from controller! 4';
   }
 }
