@@ -25,9 +25,9 @@ export class AppController {
     return this.appService.getHello() + ' from controller!';
   }
 
-  @Get('greet')
+  @Get('greet1')
   getGreet(): string {
-    return 'Greetings from controller!';
+    return 'Greetings from controller! 1';
   }
 
   @Get('greet2')
